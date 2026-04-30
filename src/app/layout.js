@@ -2,6 +2,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
          </main>
 
         <Footer/>
+         <ToastContainer />
         </body>
     </html>
   );

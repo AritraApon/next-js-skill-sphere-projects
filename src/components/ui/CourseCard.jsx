@@ -25,7 +25,7 @@ const CourseCard = ({ course }) => {
                                         category === "Marketing" ? "bg-orange-500 text-white" :
                                             category === "IT & Software" ? "bg-green-600 text-white" :
                                                 category === "Business" ? "bg-yellow-500 text-black" :
-                                                    "bg-gray-500 text-white" // Personal Development ba default er jonno
+                                                    "bg-gray-500 text-white" 
                             }`}>
                             {category}
                         </span>

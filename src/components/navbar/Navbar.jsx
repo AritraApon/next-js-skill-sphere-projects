@@ -60,7 +60,7 @@ const links = <>
                             height={40}
                         />
                     </div>
-                    <Link href={'/'} className="px-5  text-lg font-semibold text-blue-600 py-2 border-2 border-blue-600 rounded-3xl btn">Login</Link>
+                    <Link href={'/login'} className="px-5  text-lg font-semibold text-blue-600 py-2 border-2 border-blue-600 rounded-3xl btn">Login</Link>
                 </div>
             </div>
         </div>
