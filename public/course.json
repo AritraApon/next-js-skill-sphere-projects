@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "Dr. Angela Yu",
+    "duration": "45 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Master HTML, CSS, JavaScript, React, and Node.js. This comprehensive bootcamp is designed to take you from zero to a professional full-stack developer. You will build over 15 real-world projects, including a personal portfolio and a complex e-commerce application with secure payment integration.",
+    "image": "https://ibb.co.com/0j9xK1zW",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced UI/UX Design Masterclass",
+    "instructor": "Sarah Maynard",
+    "duration": "30 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Deep dive into user-centered design principles. Learn how to create high-fidelity wireframes, interactive prototypes using Figma, and conduct usability testing. This course covers modern design trends like glassmorphism and neumorphism while focusing on accessibility and responsive layouts for all devices.",
+    "image": "https://ibb.co.com/WvbtP0tN",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Mastering React & Next.js 14",
+    "instructor": "Maximilian Schwarz",
+    "duration": "25 hours",
+    "rating": 4.7,
+    "level": "Advanced",
+    "description": "Learn the latest features of Next.js 14 including App Router, Server Actions, and Server-Side Rendering (SSR). This course focuses on building SEO-friendly, high-performance web applications with Tailwind CSS and Framer Motion for smooth animations and transitions.",
+    "image": "https://ibb.co.com/bjMykpbZ",
+    "category": "Development"
+  },
+  {
+    "id": 4,
+    "title": "Python for Data Science & AI",
+    "instructor": "Jose Portilla",
+    "duration": "50 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Start your journey in Artificial Intelligence. This course covers Python basics, NumPy, Pandas, Matplotlib, and Scikit-Learn. You will learn how to analyze massive datasets, create stunning visualizations, and build predictive machine learning models from scratch.",
+    "image": "https://ibb.co.com/21dRgfCp",
+    "category": "Data Science"
+  },
+  {
+    "id": 5,
+    "title": "Digital Marketing Strategy 2026",
+    "instructor": "Alex Cattoni",
+    "duration": "15 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn how to dominate the digital landscape. This course covers SEO, Social Media Marketing, Content Strategy, and Google Ads. Perfect for entrepreneurs looking to grow their brand or professionals wanting to master the art of conversion-driven copywriting.",
+    "image": "https://ibb.co.com/YFT1hjZg",
+    "category": "Marketing"
+  },
+  {
+    "id": 6,
+    "title": "Cybersecurity Fundamentals",
+    "instructor": "Nathan House",
+    "duration": "35 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Protect digital assets from hackers. Learn about network security, ethical hacking, cryptography, and risk management. This course prepares you for the CompTIA Security+ certification and provides hands-on labs to simulate real-world cyber attack scenarios.",
+    "image": "https://ibb.co.com/MkNDNcKg",
+    "category": "IT & Software"
+  },
+  {
+    "id": 7,
+    "title": "Graphic Design Theory to Practice",
+    "instructor": "Lindsay Marsh",
+    "duration": "22 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Unlock your creativity by mastering Adobe Photoshop, Illustrator, and InDesign. This course focuses on the golden ratio, color theory, and typography. You will create logos, brand identities, and professional print materials that stand out in the industry.",
+    "image": "https://ibb.co.com/yFkDDj79",
+    "category": "Design"
+  },
+  {
+    "id": 8,
+    "title": "The Complete SQL Bootcamp",
+    "instructor": "Josh Starmer",
+    "duration": "12 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Master PostgreSQL and database management. Learn how to query complex databases, perform data analysis, and build scalable backends. This course is essential for anyone looking to work with data or develop data-driven web applications.",
+    "image": "https://ibb.co.com/XGSHMjq",
+    "category": "Data Science"
+  },
+  {
+    "id": 9,
+    "title": "Mobile App Development with Flutter",
+    "instructor": "Stephen Grider",
+    "duration": "40 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build high-quality native apps for iOS and Android with a single codebase. Learn Dart programming, state management with Bloc or Provider, and how to integrate Firebase for real-time databases and user authentication in your mobile applications.",
+    "image": "https://ibb.co.com/qMg19g5F",
+    "category": "Development"
+  },
+  {
+    "id": 10,
+    "title": "Project Management Professional (PMP)",
+    "instructor": "Andrew Ramdayal",
+    "duration": "38 hours",
+    "rating": 4.7,
+    "level": "Advanced",
+    "description": "Prepare for the PMP certification with comprehensive coverage of Agile, Waterfall, and Hybrid methodologies. This course teaches you how to manage budgets, schedules, and stakeholders effectively to lead successful projects in any industry.",
+    "image": "https://ibb.co.com/wNCKS5fp",
+    "category": "Business"
+  },
+  {
+    "id": 11,
+    "title": "Photography Masterclass",
+    "instructor": "Phil Ebiner",
+    "duration": "18 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "From DSLR to Smartphone—learn how to take stunning photos in any environment. This course covers exposure, composition, lighting, and post-processing in Adobe Lightroom. Master the art of storytelling through visual imagery and build a professional portfolio.",
+    "image": "https://ibb.co.com/DgL6ZKN8",
+    "category": "Personal Development"
+  },
+  {
+    "id": 12,
+    "title": "Blockchain & Cryptocurrency Explained",
+    "instructor": "Bettina Warburg",
+    "duration": "14 hours",
+    "rating": 4.4,
+    "level": "Intermediate",
+    "description": "Understand the technology behind Bitcoin, Ethereum, and Smart Contracts. This course explains the decentralized web (Web3), NFT ecosystems, and how blockchain is transforming finance and supply chain industries globally.",
+    "image": "https://ibb.co.com/TM7GDfyH",
+    "category": "IT & Software"
+  }
+]
