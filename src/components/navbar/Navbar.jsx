@@ -38,7 +38,7 @@ const links = <>
                             {links}
                         </ul>
                     </div>
-                    <p className="btn btn-ghost font-bold text-2xl flex items-center text-blue-600">
+                    <p className="btn btn-ghost font-bold text-lg lg:text-2xl flex items-center text-blue-600">
                         <FaGraduationCap />
                         <span>SkillSphere</span></p>
                 </div>
