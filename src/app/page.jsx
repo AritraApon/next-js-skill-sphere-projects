@@ -1,4 +1,5 @@
 import Courses from "@/components/Home/courses/Courses";
+import Faqs from "@/components/Home/faqs/Faqs";
 import Hero from "@/components/Home/hero/Hero";
 import Instructors from "@/components/Home/instructors/Instructors";
 import LearningTips from "@/components/Home/learningtips/LearningTips";
@@ -14,6 +15,7 @@ export default function Home() {
      <Instructors/>
      <Trending/>
      <LearningTips/>
+     <Faqs/>
     </div>
   );
 }
