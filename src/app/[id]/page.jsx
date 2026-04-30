@@ -4,15 +4,23 @@ import CourseData from '../../../public/course.json';
 import { FaArrowCircleLeft, FaStar } from 'react-icons/fa';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import { PacmanLoader } from 'react-spinners';
 
 const DetailsPage = async ({ params }) => {
     const { id } = await params
-    const course = CourseData.find(friend => friend.id === parseInt(id));
+    const course = CourseData.find(course => course.id === parseInt(id));
+  if (!course) {
+    return <div className="flex justify-center items-center min-h-[50vh]">
+<PacmanLoader
+
+  color="#021cff"
+  size={50}
+/>
+        </div>;
+}
     const { title, instructor, rating, category, image, duration, level, description } = course;
 
-    // const handleEnroll =() =>{
-    //     toast.success('Successfully Enroll ')
-    // }
+
     return (
         <div className='max-w-6xl mx-auto my-20'>
 

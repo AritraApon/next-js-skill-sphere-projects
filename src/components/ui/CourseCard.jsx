@@ -6,6 +6,7 @@ import { FaStar, FaUser } from "react-icons/fa6";
 
 const CourseCard = ({ course }) => {
     const { id, title, instructor, rating, category, image } = course;
+  
     return (
         <div >
             <div className="card bg-base-100  shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-200/50 cursor-pointer">
@@ -25,14 +26,14 @@ const CourseCard = ({ course }) => {
                                         category === "Marketing" ? "bg-orange-500 text-white" :
                                             category === "IT & Software" ? "bg-green-600 text-white" :
                                                 category === "Business" ? "bg-yellow-500 text-black" :
-                                                    "bg-gray-500 text-white" 
+                                                    "bg-gray-500 text-white"
                             }`}>
                             {category}
                         </span>
                     </div>
                 </figure>
                 <div className="p-3 space-y-2">
-                    <h2 className="card-title font-bold">{title}</h2>
+                    <h2 className="card-title font-bold">{title ? title : 'Title'}</h2>
 
                     <div className="flex justify-between">
                         <h1 className="flex items-center gap-1 font-semibold"><span className="text-blue-700 font-bold"><FaUser /></span> {instructor}</h1>
