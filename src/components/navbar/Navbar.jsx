@@ -7,6 +7,7 @@ import UserPng from '@/assets/user.png'
 import { authClient } from "@/lib/auth-client";
 import { HiLogin, HiOutlineLogin } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     //  hooks
@@ -14,6 +15,11 @@ const Navbar = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
 
+    const handleLogOut = async() => {
+      await  authClient.signOut()
+        toast.success('Logged out successfully')
+
+    }
     //  Navigation links
     const links = (
         <>
@@ -73,13 +79,13 @@ const Navbar = () => {
                             />
                             {/* LogOut Buttons */}
                             <button
-                                onClick={() => authClient.signOut()}
+                                onClick={handleLogOut}
                                 className="hidden lg:flex px-4 py-2 border-2 border-red-500 text-red-500 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white active:scale-95 shadow-sm"
                             >
                                 LogOut
                             </button>
                             <button
-                                onClick={() => authClient.signOut()}
+                                onClick={handleLogOut}
                                 className="flex lg:hidden px-4 py-2 border-2 border-red-500 text-red-500 font-semibold rounded-full transition-all duration-300 hover:bg-red-500 hover:text-white active:scale-95"
                             >
                                 <IoLogOut className="text-xl" />

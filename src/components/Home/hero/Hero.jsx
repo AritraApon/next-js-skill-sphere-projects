@@ -5,28 +5,30 @@ import HeroPng from '@/assets/hero.jpg'
 import { IoLogoIonic } from "react-icons/io";
 import { FaPlayCircle } from "react-icons/fa";
 import {motion} from 'framer-motion'
+
+
 const Hero = () => {
 
 
     return (
-        <div className="bg-[#f0eaf6]">
+        <div className="bg-[#f0eaf6] container mx-auto overflow-hidden px-4">
             <div className="hero  min-h-8xl py-20 rounded-b-2xl">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-10 lg:gap-70 ">
                     <motion.div className="shadow-blue-300 shadow-2xl animate-pulse"
-               initial={{x:600 , opacity:0}}
+               initial={{x:20 , opacity:0}}
                animate={{x:0 , opacity:1}}
                transition={{duration:0.8 , ease:'easeOut' , delay:0.2}}
                     >
                         <Image
                             src={HeroPng}
                             alt="hero photo"
-                            width={400}
-                            height={400}
-                            className="max-w-sm rounded-lg shadow-2xl"
+                            width={300}
+                            height={300}
+                            className="max-w-sm w-full rounded-lg shadow-2xl"
                         />
                     </motion.div>
                     <motion.div className=""
-                    initial={{x:-600 , opacity:0}}
+                    initial={{x:-40 , opacity:0}}
                     animate={{x:0 , opacity:1}}
                     transition={{duration:0.8 , ease:'easeIn' ,delay:0.1}}
                     >
