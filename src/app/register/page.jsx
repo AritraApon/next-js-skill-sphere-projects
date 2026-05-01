@@ -2,7 +2,6 @@
 'use client'
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -11,7 +10,7 @@ import { toast } from "react-toastify";
 
 const RegisterPage = () => {
 
-    const router = useRouter();
+
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -35,7 +34,7 @@ const RegisterPage = () => {
     })
      if(res){
         toast.success("Successfully Register your Account !")
-        // router.push("/login");
+
      }
 
      if(error){
