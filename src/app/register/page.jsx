@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { motion } from 'framer-motion';
 
 
 const RegisterPage = () => {
@@ -46,7 +47,11 @@ const RegisterPage = () => {
 
     return (
         <div>
-            <div className="flex justify-center items-center min-h-[80vh] mx-3 my-10">
+            <motion.div className="flex justify-center items-center min-h-[80vh] mx-3 my-10"
+initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+            >
                 <div className="bg-[#d0b0ef52] p-6 sm:p-10 shadow-xl rounded-2xl w-full sm:max-w-125 space-y-3 hover:shadow-violet-200 transition-shadow">
                     <div>
                         <h1 className="font-bold text-stone-600 text-2xl text-center mb-6">Register <span className="text-violet-500">your account</span></h1>
@@ -127,7 +132,7 @@ const RegisterPage = () => {
 
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

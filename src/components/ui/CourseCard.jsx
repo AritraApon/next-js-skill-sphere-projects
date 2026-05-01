@@ -1,15 +1,21 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { CiUser } from "react-icons/ci";
 import { FaStar, FaUser } from "react-icons/fa6";
-
+import { motion } from 'framer-motion'
 
 const CourseCard = ({ course }) => {
     const { id, title, instructor, rating, category, image } = course;
-  
+
     return (
         <div >
-            <div className="card bg-base-100  shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-200/50 cursor-pointer">
+            <motion.div className="card bg-base-100  shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-200/50 cursor-pointer"
+
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 0.9 }}
+                transition={{ duration: 0.5, ease: "easeIn" }}
+            >
                 <figure className="bg-violet-200 relative">
                     <Image
                         src={image}
@@ -21,12 +27,12 @@ const CourseCard = ({ course }) => {
                     />
                     <div className="absolute top-3 right-3">
                         <span className={`badge badge-lg font-semibold border-none ${category === "Development" ? "bg-blue-500 text-white" :
-                                category === "Design" ? "bg-pink-500 text-white" :
-                                    category === "Data Science" ? "bg-purple-600 text-white" :
-                                        category === "Marketing" ? "bg-orange-500 text-white" :
-                                            category === "IT & Software" ? "bg-green-600 text-white" :
-                                                category === "Business" ? "bg-yellow-500 text-black" :
-                                                    "bg-gray-500 text-white"
+                            category === "Design" ? "bg-pink-500 text-white" :
+                                category === "Data Science" ? "bg-purple-600 text-white" :
+                                    category === "Marketing" ? "bg-orange-500 text-white" :
+                                        category === "IT & Software" ? "bg-green-600 text-white" :
+                                            category === "Business" ? "bg-yellow-500 text-black" :
+                                                "bg-gray-500 text-white"
                             }`}>
                             {category}
                         </span>
@@ -49,7 +55,7 @@ const CourseCard = ({ course }) => {
 
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

@@ -5,7 +5,7 @@ import CourseCard from '../../ui/CourseCard';
 
 const Courses = () => {
     return (
-        <div className='my-10'>
+        <div className='my-20'>
             <div className='w-10/12 mx-auto flex justify-between'>
                 <div className='space-y-2 '>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl font-extrabold '>Popular Courses</h1>

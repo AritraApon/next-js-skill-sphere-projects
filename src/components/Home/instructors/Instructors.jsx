@@ -60,7 +60,7 @@ const Instructors = () => {
 ]
 
     return (
-        <div className="mt-10 bg-[#f0eaf6] py-5">
+        <div className="my-20 bg-[#f0eaf6] py-5">
             <div className="mt-10">
                 <h1 className='text-3xl md:text-3xl lg:text-4xl font-extrabold text-center mb-4'>Meet Our Instructors</h1>
 

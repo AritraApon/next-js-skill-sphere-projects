@@ -1,5 +1,8 @@
+'use client'
 import Image from 'next/image';
 import React from 'react';
+import { motion } from 'framer-motion'
+
 
 const LearningTips = () => {
     const studentTips = [
@@ -27,7 +30,7 @@ const LearningTips = () => {
     ]
 
     return (
-        <div className='my-10'>
+        <div className='my-20'>
             <div className='my-10 text-center'>
                 <p className='font-bold text-blue-600 text-xl'>Master Your Learning Journey</p>
                 <p>Achieving your goals is a marathon, not a sprint. Follow these core principles to excel.</p>
@@ -37,7 +40,20 @@ const LearningTips = () => {
                 {
                     studentTips.map(tips =>
                         <div key={tips.id}>
-                            <div className="card bg-violet-100  shadow-xl  hover:shadow-2xl transition-all duration-300  group rounded-4xl border border-blue-400 ">
+                            <motion.div className="card bg-violet-100  shadow-xl  hover:shadow-2xl transition-all duration-300  group rounded-4xl border border-blue-400 "
+
+                                initial={{ y: 80, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: true, amount: 0.1 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 60,
+                                    damping: 20,
+                                    delay:  0.1,
+                                    duration: 0.8
+                                }}
+
+                            >
 
                                 <div className="px-6 pt-8 flex justify-center">
                                     <div className="p-4 rounded-full border-2 border-blue-500">
@@ -68,7 +84,7 @@ const LearningTips = () => {
                                 </div>
 
                                 <div className="h-1 w-0 group-hover:w-full bg-blue-600 transition-all duration-500 rounded-b-4xl"></div>
-                            </div>
+                            </motion.div>
                         </div>
 
 

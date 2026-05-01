@@ -6,7 +6,7 @@ import { SiGoogleclassroom } from "react-icons/si";
 const InstructorCard = ({ instructor }) => {
     return (
         <div className="space-y-3">
-            <div className="card bg-base-100 w-auto lg:w-96 shadow-md hover:shadow-xl hover:shadow-violet-400 transition-all duration-300 border border-gray-100">
+            <div className="card bg-blue-50 w-auto lg:w-80 shadow-md hover:shadow-xl hover:shadow-violet-400 transition-all duration-300 border border-gray-100">
                 <figure className="px-10 pt-10">
                     <Image src={instructor.image}
                         alt={instructor.name}
