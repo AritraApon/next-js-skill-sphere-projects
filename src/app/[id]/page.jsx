@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import CourseData from '../../../public/course.json';
 import { FaArrowCircleLeft, FaStar } from 'react-icons/fa';
@@ -9,6 +8,10 @@ import { redirect } from 'next/navigation';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 
+export const metadata = {
+  title: "Skill Sphere || Course Details",
+  description: "Master your future with Skill Sphere",
+};
 
 const DetailsPage = async ({ params }) => {
 
@@ -112,7 +115,7 @@ const DetailsPage = async ({ params }) => {
                 </div>
             </div>
             <div className=' flex  items-center justify-center mt-6 '>
-                <Link href={'/'}>
+                <Link href={'/courses'}>
                     <button className='btn btn-primary text-white  text-xl  flex items-center'><FaArrowCircleLeft /> Back </button>
                 </Link>
             </div>

@@ -17,7 +17,7 @@ const CoursesPageCards = ({ data }) => {
     return (
         <div>
             <div className="flex justify-center gap-2 items-center my-4 mx-4">
-                <label className="input bg-violet-300 ">
+                <label className="input bg-violet-300 font-bold">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"
@@ -30,7 +30,7 @@ const CoursesPageCards = ({ data }) => {
                             <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" required placeholder="Search"
+                    <input type="search" required placeholder="Search title here"
                     value={inputTitle}
                      onChange={(e)=>setInputTitle(e.target.value)}
 

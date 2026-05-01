@@ -4,6 +4,13 @@ import Link from 'next/link';
 import { IoHome } from 'react-icons/io5';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 import CoursesPageCards from '@/components/courses/CoursesPageCards';
+import Trending from '@/components/Home/trending/Trending';
+
+
+export const metadata = {
+  title: "Skill Sphere || All courses",
+  description: "Learn smarter with Skill Sphere.",
+};
 
 const CoursesPage = () => {
     return (
@@ -29,7 +36,9 @@ const CoursesPage = () => {
               <div>
                 <CoursesPageCards data={data}  />
               </div>
-
+<div>
+    <Trending/>
+</div>
 
              <div className=' flex  items-center justify-center mt-6 '>
                     <Link href={'/'}>
