@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { useForm } from "react-hook-form"
-// import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
-// import { createAuthClient } from "better-auth/react";
+import { createAuthClient } from "better-auth/react";
 
 const LoginPage = () => {
      const [showPassword, setShowPassword] = useState(false);
-    // const authClient = createAuthClient();
+    const authClient = createAuthClient();
     const {
         register,
         handleSubmit,
@@ -18,38 +18,40 @@ const LoginPage = () => {
         formState: { errors },
     } = useForm()
 
-    // const onSubmit = async (data) => {
-    //     console.log(data)
-    //     const { email, password } = data
+    const onSubmit = async (data) => {
+    
+        const { email, password } = data
 
-    //     const { data: res, error } = await authClient.signIn.email({
-    //         email: email, // required
-    //         password: password, // required
-    //         rememberMe: true,
-    //         callbackURL: "/",
-    //     });
-    //     // console.log(res , error)
-    //     if (res) {
-    //         toast.success('Successfully Login')
-    //     }
+        const { data: res, error } = await authClient.signIn.email({
+            email: email, // required
+            password: password, // required
+            rememberMe: true,
+            callbackURL: "/",
+        });
+        // console.log(res , error)
+        if (res) {
+            toast.success('Successfully Login')
+        }
 
-    //     if (error) {
-    //         toast.error(error?.message)
-    //     }
-    // }
+        if (error) {
+            toast.error(error?.message)
+        }
+    }
 
-    // const handleGoogleSingIn = async () => {
-    //     const data = await authClient.signIn.social({
-    //         provider: "google",
-    //     });
-    //     if(data){
-    //         toast.success('welcome ')
-    //     }
-    // }
+
+
+    const signIn = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  if(data){
+    toast.success('Successfully login ')
+  }
+};
 
     return (
         <div>
-           <div className="flex justify-center items-center min-h-[80vh]  ">
+           <div className="flex justify-center items-center min-h-[80vh] mx-4  ">
 
     <div className="bg-[#dec6f748] mb-2 p-6 sm:p-10 shadow-xl rounded-2xl w-full sm:max-w-125 space-y-3 hover:shadow-violet-200 transition-shadow">
 
@@ -60,9 +62,9 @@ const LoginPage = () => {
         </div>
 
         <div className="divider"></div>
-{/* onSubmit={handleSubmit(onSubmit)} */}
+
         <div>
-            <form className="mt-6 space-y-4" >
+            <form className="mt-6 space-y-4" onSubmit={handleSubmit(onSubmit)} >
 
                 {/* Email Field */}
                 <fieldset className="fieldset">
@@ -109,9 +111,9 @@ const LoginPage = () => {
                     Don’t Have An Account? <Link href={'/register'} className="text-blue-500 font-semibold hover:underline">Register</Link>
                 </p>
             </form>
-   {/* onClick={handleGoogleSingIn} */}
+
             <div className="mt-6">
-                <button
+                <button onClick={signIn}
                     className="btn btn-outline w-full text-blue-500 border-blue-500 hover:bg-blue-50 hover:text-blue-600 rounded-xl flex items-center justify-center gap-2"
 
                 >

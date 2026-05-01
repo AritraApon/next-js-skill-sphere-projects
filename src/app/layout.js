@@ -1,3 +1,7 @@
+// import dns from 'node:dns'
+// dns.setServers (["8.8.8.8" , "8.8.4.4" ])
+
+
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
@@ -21,10 +25,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en" suppressHydrationWarning
+      lang="en" suppressHydrationWarning={true}
       className={`${nunito.className} h-full antialiased`} data-theme='light'
     >
-      <body className="min-h-full flex flex-col bg-[#fcf8ff]">
+      <body className="min-h-full flex flex-col bg-[#fcf8ff]" suppressHydrationWarning={true}>
          <Navbar/>
          <main className="container mx-auto ">
              {children}

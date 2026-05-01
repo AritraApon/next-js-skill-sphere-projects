@@ -5,16 +5,29 @@ import { FaArrowCircleLeft, FaStar } from 'react-icons/fa';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { PacmanLoader } from 'react-spinners';
+import { redirect } from 'next/navigation';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
+
 
 const DetailsPage = async ({ params }) => {
+
+ const session = await auth.api.getSession({
+        headers: await headers()
+    })
+  if (!session) {
+    redirect('/login');
+  }
+
+
     const { id } = await params
     const course = CourseData.find(course => course.id === parseInt(id));
   if (!course) {
-    return <div className="flex justify-center items-center min-h-[50vh]">
+    return <div className="flex justify-center items-center min-h-[60vh]">
 <PacmanLoader
 
   color="#021cff"
-  size={50}
+  size={30}
 />
         </div>;
 }
@@ -91,9 +104,9 @@ const DetailsPage = async ({ params }) => {
 
 
                         <div className="card-actions mt-auto">
-                            <button   className="btn bg-linear-to-r  from-[#ef499c] to-[#bb1a73]  text-lg btn-block text-white font-bold shadow-lg hover:shadow-blue-200 hover:from-violet-500 hover:to-blue-500">
+                            {/* <button   className="btn bg-linear-to-r  from-[#ef499c] to-[#bb1a73]  text-lg btn-block text-white font-bold shadow-lg hover:shadow-blue-200 hover:from-violet-500 hover:to-blue-500">
                                 Enroll Now
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

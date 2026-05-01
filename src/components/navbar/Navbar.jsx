@@ -2,13 +2,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaGraduationCap } from "react-icons/fa";
+import { FaGraduationCap, FaUserPlus } from "react-icons/fa";
 import UserPng  from '@/assets/user.png'
+import { authClient } from "@/lib/auth-client";
+import { HiLogin, HiOutlineLogin } from "react-icons/hi";
+import { IoLogOut } from "react-icons/io5";
 
 
 
 const Navbar = () => {
-      const pathname = usePathname()
+ const pathname = usePathname()
+ 
+    const {
+        data: session,
+        isPending, //loading state
+        error, //error object
+        refetch //refetch the session
+    } = authClient.useSession()
+
+    if(isPending){
+        return <div><span className="loading loading-spinner loading-lg"></span></div>
+    }
+
+   const user = session?.user
+
+   console.log(user)
+
+
 const links = <>
      <li className={` ${pathname === '/' ? 'text-blue-600 border-b-2 border-blue-600' : ''} text-lg font-bold`}>
         <Link href='/'>Home</Link>
@@ -47,21 +67,79 @@ const links = <>
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end gap-4 mx-2">
+
+                {user ?  <div className="navbar-end gap-4 mx-2">
                     <div className="hidden lg:flex" >
-                        <h1>Welcome ! <span>Aritro</span></h1>
+                        <h1>Welcome ! <span className="text-pink-800">{user?.name || 'User'}</span></h1>
 
                     </div>
                     <div>
                          <Image
-                            src={UserPng}
+                            src={user?.image ||  UserPng}
                             alt="user photo"
                             width={40}
                             height={40}
+                            className=" rounded-full w-10 object-cover h-10"
                         />
                     </div>
-                    <Link href={'/login'} className="px-5  text-lg font-semibold text-blue-600 py-2 border-2 border-blue-600 rounded-3xl btn">Login</Link>
-                </div>
+
+       <div className="hidden lg:flex">
+ <button   onClick={() => authClient.signOut()}  className="px-4 py-2 border-2 border-red-500 text-red-500 font-semibold rounded-full 
+             transition-all duration-300 ease-in-out
+             hover:bg-red-500 hover:text-white active:scale-95 shadow-sm hover:shadow-md"> LogOut </button>
+       </div>
+       <div className="flex lg:hidden">
+ <button   onClick={() => authClient.signOut()}  className="px-4 py-2 border-2 border-red-500 text-red-500 font-semibold rounded-full 
+             transition-all duration-300 ease-in-out
+             hover:bg-red-500 hover:text-white active:scale-95 shadow-sm hover:shadow-md"> <IoLogOut className="text-xl" /> </button>
+       </div>
+
+
+                </div> :
+
+
+
+                <div className="navbar-end gap-4 mx-2">
+       <div className="hidden lg:flex">
+      <Link href={'/login'} className="px-6 py-2 border-2 border-blue-500 text-blue-500 font-semibold rounded-full 
+             transition-all duration-300 ease-in-out
+             hover:bg-blue-500 hover:text-white active:scale-95 shadow-sm hover:shadow-md flex items-center gap-2.5">
+                <HiLogin className="text-xl" />
+                Login
+             </Link>
+       </div>
+       <div className="flex lg:hidden">
+      <Link href={'/login'} className="px-4 py-2 border-2 border-blue-500 text-blue-500 font-semibold rounded-full 
+             transition-all duration-300 ease-in-out
+             hover:bg-blue-500 hover:text-white active:scale-95 shadow-sm hover:shadow-md flex items-center gap-2.5">
+                <HiOutlineLogin className="text-xl" />
+
+             </Link>
+       </div>
+
+
+             <div className="hidden lg:flex">
+                <Link href={'/register'} className="flex items-center gap-2.5 px-6 py-2.5 
+                       bg-primary text-white font-semibold
+                       rounded-full transition-all duration-300
+                       ease-in-out hover:bg-secondary active:scale-95
+                       shadow-md hover:shadow-lg">
+      <FaUserPlus className="text-xl" />
+      <span>Register</span>
+    </Link>
+             </div>
+             <div className="flex lg:hidden">
+                <Link href={'/register'} className="flex items-center gap-2.5 px-4 py-2.5 
+                       bg-primary text-white font-semibold
+                       rounded-full transition-all duration-300
+                       ease-in-out hover:bg-secondary active:scale-95
+                       shadow-md hover:shadow-lg">
+      <FaUserPlus className="text-xl" />
+
+    </Link>
+             </div>
+                </div> }
+
             </div>
         </div>
     );

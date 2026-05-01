@@ -1,11 +1,18 @@
+
 'use client'
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const RegisterPage = () => {
+
+    const router = useRouter();
+
     const [showPassword, setShowPassword] = useState(false);
 
     const {
@@ -14,6 +21,29 @@ const RegisterPage = () => {
         watch,
         formState: { errors },
     } = useForm()
+
+   const onSubmit = async (data) =>{
+    const {name , photo , email , password} = data ;
+
+
+    const { data:res, error } = await authClient.signUp.email({
+        email:email , // user email address
+        password: password , // user password -> min 8 characters by default
+        name: name , // user display name
+        image : photo ,// User image URL (optional)
+        callbackURL: "/" // A URL to redirect to after the user verifies their email (optional)
+    })
+     if(res){
+        toast.success("Successfully Register your Account !")
+        // router.push("/login");
+     }
+
+     if(error){
+        toast.error(error?.message || "Something went wrong!")
+     }
+    //   console.log(res , error)
+
+}
 
     return (
         <div>
@@ -24,8 +54,8 @@ const RegisterPage = () => {
                     </div>
                     <div className="divider"></div>
                     <div>
-                        {/* onSubmit={handleSubmit(onSubmit)} */}
-                        <form className="mt-6 space-y-2"  >
+
+                        <form className="mt-6 space-y-2"  onSubmit={handleSubmit(onSubmit)} >
                             <fieldset className="fieldset">
                                 <legend className="fieldset-legend text-lg text-gray-500">Your Name</legend>
                                 <input type="text"
