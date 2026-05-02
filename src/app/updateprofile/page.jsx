@@ -51,7 +51,7 @@ const UpdateProfile = () => {
 
                 <div className="bg-[#d0b0ef52] p-6 sm:p-10 shadow-xl rounded-2xl w-full sm:max-w-125 space-y-3 hover:shadow-violet-200 transition-shadow">
                     <div>
-                        <h1 className="font-bold text-stone-600 text-2xl text-center mb-6">Register <span className="text-violet-500">your account</span></h1>
+                        <h1 className="font-bold text-stone-600 text-2xl text-center mb-6">Edit <span className="text-violet-500">your profile</span></h1>
                     </div>
                     <div className="divider"></div>
                     <div>
