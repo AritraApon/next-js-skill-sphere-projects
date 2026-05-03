@@ -5,6 +5,7 @@ import HeroPng from '@/assets/hero.jpg'
 import { IoLogoIonic } from "react-icons/io";
 import { FaPlayCircle } from "react-icons/fa";
 import {motion} from 'framer-motion'
+import Link from "next/link";
 
 
 const Hero = () => {
@@ -22,8 +23,8 @@ const Hero = () => {
                         <Image
                             src={HeroPng}
                             alt="hero photo"
-                            width={300}
-                            height={300}
+                            width={400}
+                            height={400}
                             className="max-w-sm w-full rounded-lg shadow-2xl"
                         />
                     </motion.div>
@@ -47,12 +48,14 @@ const Hero = () => {
                             Explore world-class courses from industry experts. Start your journey <br /> today and unlock your potential with Skill Sphere's premium learning <br /> experience.
                         </p>
 
-                        <div className="flex gap-3">
-                            <motion.button className="btn rounded-full bg-linear-to-r  from-[#ef499c] to-[#bb1a73] text-white text-lg font-semibold py-6 px-8 hover:bg-linear-to-r hover:from-violet-500 hover:to-blue-500 "
+                        <div className="flex flex-col md:flex-row gap-3">
+                            <Link href={'/courses'}>
+                              <motion.button className="btn rounded-full bg-linear-to-r  from-[#ef499c] to-[#bb1a73] text-white text-lg font-semibold py-6 px-8 hover:bg-linear-to-r hover:from-violet-500 hover:to-blue-500 "
                             whileHover={{scale:1.1}}
                             whileTap={{scale:0.9}}
 
-                            >Join Now</motion.button>
+                            >Explore</motion.button>
+                            </Link>
 
                             <button className="btn rounded-full border-2 border-blue-100 text-lg font-semibold py-6 px-8 hover:bg-linear-to-r hover:bg-violet-50 flex items-center gap-2">
                                <FaPlayCircle /> Watch Demo</button>

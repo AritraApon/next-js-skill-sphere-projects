@@ -21,7 +21,7 @@ const CoursesPage = () => {
                         <button className=' text-violet-900 text-2xl  flex items-center cursor-pointer hover:text-orange-600'><FaArrowCircleLeft /> </button>
                     </Link>
                 </div>
-                <div>
+                <div className='space-y-2'>
                     <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-center'>All Courses</h1>
                     <p className='text-sm text-center'>The most sought-after skills in the industry right now.</p>
                 </div>

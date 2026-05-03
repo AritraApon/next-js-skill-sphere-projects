@@ -9,31 +9,31 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 
 export const metadata = {
-  title: "Skill Sphere || Course Details",
-  description: "Master your future with Skill Sphere",
+    title: "Skill Sphere || Course Details",
+    description: "Master your future with Skill Sphere",
 };
 
 const DetailsPage = async ({ params }) => {
 
- const session = await auth.api.getSession({
+    const session = await auth.api.getSession({
         headers: await headers()
     })
-  if (!session) {
-    redirect('/login');
-  }
+    if (!session) {
+        redirect('/login');
+    }
 
 
     const { id } = await params
     const course = CourseData.find(course => course.id === parseInt(id));
-  if (!course) {
-    return <div className="flex justify-center items-center min-h-[60vh]">
-<PacmanLoader
+    if (!course) {
+        return <div className="flex justify-center items-center min-h-[60vh]">
+            <PacmanLoader
 
-  color="#021cff"
-  size={30}
-/>
+                color="#021cff"
+                size={30}
+            />
         </div>;
-}
+    }
     const { title, instructor, rating, category, image, duration, level, description } = course;
 
 
@@ -57,8 +57,6 @@ const DetailsPage = async ({ params }) => {
                     <div className="card-body lg:w-1/2 p-8">
 
                         <div className="flex justify-between items-center mb-4">
-                            {/* <span className="badge badge-primary badge-outline font-bold px-4 py-3">{category}</span> */}
-
 
                             <span className={`badge badge-lg font-semibold border-none ${category === "Development" ? "bg-blue-500 text-white" :
                                 category === "Design" ? "bg-pink-500 text-white" :
@@ -107,18 +105,23 @@ const DetailsPage = async ({ params }) => {
 
 
                         <div className="card-actions mt-auto">
-                            {/* <button   className="btn bg-linear-to-r  from-[#ef499c] to-[#bb1a73]  text-lg btn-block text-white font-bold shadow-lg hover:shadow-blue-200 hover:from-violet-500 hover:to-blue-500">
-                                Enroll Now
-                            </button> */}
+                            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full max-w-2xl mx-auto">
+                                <button className="w-full md:w-[70%] btn bg-linear-to-r from-[#ef499c] to-[#bb1a73] text-lg text-white font-bold border-none shadow-lg hover:shadow-pink-200 hover:from-violet-600 hover:to-indigo-600 ">
+                                    Enroll Now
+                                </button>
+
+
+                                <Link href={'/courses'} className="w-[30%]">
+                                    <button className="w-full btn btn-outline border-slate-300 text-violet-600 hover:bg-violet-100 hover:border-slate-400 text-lg flex items-center justify-center gap-2 transition-all duration-300">
+                                         Back
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className=' flex  items-center justify-center mt-6 '>
-                <Link href={'/courses'}>
-                    <button className='btn btn-primary text-white  text-xl  flex items-center'><FaArrowCircleLeft /> Back </button>
-                </Link>
-            </div>
+
 
         </div>
     );

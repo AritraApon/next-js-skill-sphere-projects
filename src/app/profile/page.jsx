@@ -20,41 +20,65 @@ if (isPending) {
     }
 
     return (
-        <div className="">
-<div className="min-h-[80vh] flex items-center justify-center  p-4">
+       <div className="min-h-screen py-12 px-4 bg-[#fcf8ff]">
+  <div className="flex flex-col items-center justify-center">
 
-            <motion.div className="card w-full max-w-md bg-[#f4d9e8] shadow-xl border border-gray-100"
-            initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-                <figure className="px-10 pt-10">
-                    <div className="avatar">
-                        <div className="w-60 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <Image src={user?.image || '' } alt="Profile"  width={400} height={400} />
-                        </div>
-                    </div>
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title text-3xl font-bold text-gray-800">{user?.name || Profile}</h2>
-                    <p className="text-gray-500 text-lg font-medium">{user?.email}</p>
+    <motion.div
+      className="card w-full max-w-md bg-white shadow-2xl overflow-hidden rounded-[2.5rem] border border-white"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
 
-                    <div className="card-actions mt-6">
-                        {/* The button to open modal */}
-                        <Link href={'/updateprofile'} className="btn btn-primary btn-outline px-8 rounded-full">
-                            Edit Profile
-                        </Link>
-                    </div>
-                </div>
-            </motion.div>
+      <div className="h-32 w-full bg-linear-to-r from-violet-300 to-pink-300"></div>
 
+      <figure className="relative -mt-20">
+        <div className="avatar">
+          <div className="w-40 rounded-full border-4 border-violet-600 shadow-lg overflow-hidden bg-white">
+            <Image
+              src={user?.image || Profile}
+              alt="Profile"
+              width={400}
+              height={400}
+              className="object-cover"
+            />
+          </div>
         </div>
-        <div className=' flex  items-center justify-center mt-6 '>
-                    <Link href={'/'}>
-                        <button className='btn btn-primary text-white  text-xl  flex items-center'><FaArrowCircleLeft /> Back </button>
-                    </Link>
-                </div>
+      </figure>
+
+      <div className="card-body items-center text-center pb-10">
+        <h2 className="card-title text-4xl font-extrabold bg-linear-to-l from-violet-600 to-pink-600 bg-clip-text text-transparent">
+          {user?.name || "Profile Name"}
+        </h2>
+
+        <div className="badge badge-ghost mt-1 p-3 text-gray-600 text-lg font-semibold tracking-wide">
+          {user?.email}
         </div>
+
+        <div className="divider w-2/3 mx-auto opacity-50"></div>
+
+        <div className="card-actions mt-4 w-full px-6">
+          <Link href={'/updateprofile'} className="w-full">
+            <button className="btn w-full bg-linear-to-r from-violet-600 to-pink-600 hover:from-violet-700 hover:to-pink-700 border-none text-white text-lg font-bold rounded-2xl shadow-lg hover:shadow-violet-200 transition-all duration-300 transform hover:-translate-y-1">
+              Edit Profile
+            </button>
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* Back Button */}
+    <div className="mt-10">
+      <Link href={'/'}>
+        <button className="group flex items-center gap-3 text-slate-500 hover:text-violet-600 font-bold transition-all duration-300">
+          <FaArrowCircleLeft className="text-2xl group-hover:-translate-x-2 transition-transform duration-300" />
+          <span className="text-xl">Back to Home</span>
+        </button>
+      </Link>
+    </div>
+
+  </div>
+</div>
 
     );
 };

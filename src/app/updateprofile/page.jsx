@@ -80,21 +80,26 @@ const UpdateProfile = () => {
 
 
                             </fieldset>
+                            <div className="flex items-center gap-4 mt-6">
 
-                            <button className="btn bg-violet-500 w-full  mt-4 text-lg text-white font-semibold hover:bg-violet-600">Update </button>
+                                <button className="flex-1 btn bg-violet-600 hover:bg-violet-700 text-white text-lg font-semibold border-none transition-all duration-300 shadow-md">
+                                    Update
+                                </button>
 
 
+                                <Link href={'/profile'} className="flex-1">
+                                    <button className="w-full btn btn-outline border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white text-lg font-semibold transition-all duration-300">
+                                       Cancel
+                                    </button>
+                                </Link>
+                            </div>
 
                         </form>
 
                     </div>
                 </div>
             </motion.div>
-            <div className=' flex  items-center justify-center  '>
-                <Link href={'/profile'}>
-                    <button className='btn btn-primary text-white  text-xl  flex items-center'><FaArrowCircleLeft /> Back </button>
-                </Link>
-            </div>
+
         </div>
     );
 };

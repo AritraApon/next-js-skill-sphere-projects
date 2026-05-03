@@ -15,8 +15,8 @@ const Navbar = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
 
-    const handleLogOut = async() => {
-      await  authClient.signOut()
+    const handleLogOut = async () => {
+        await authClient.signOut()
         toast.success('Logged out successfully')
 
     }
@@ -70,13 +70,16 @@ const Navbar = () => {
                             <div className="hidden lg:flex">
                                 <h1>Welcome! <span className="text-pink-800">{user?.name || 'User'}</span></h1>
                             </div>
-                            <Image
-                                src={user?.image || UserPng}
-                                alt="user photo"
-                                width={40}
-                                height={40}
-                                className="rounded-full w-10 h-10 object-cover"
-                            />
+                            <Link href={'/profile'} className="border-3 rounded-full border-violet-500">
+                                <Image
+                                    src={user?.image || UserPng}
+                                    alt="user photo"
+                                    width={40}
+                                    height={40}
+                                    className="rounded-full w-10 h-10 object-cover"
+                                />
+                            </Link>
+
                             {/* LogOut Buttons */}
                             <button
                                 onClick={handleLogOut}

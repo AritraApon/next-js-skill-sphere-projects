@@ -7,7 +7,7 @@ import { FaEarthAfrica } from 'react-icons/fa6';
 const Footer = () => {
     return (
         <div className='container mx-auto'>
-            <footer className="footer sm:footer-horizontal items-center bg-[#f8fafc] text-base-content p-10">
+            <footer className="footer sm:footer-horizontal items-center bg-[#f1f1f1] text-base-content p-10">
                 <aside>
                       <p className="btn btn-ghost font-bold text-lg lg:text-2xl flex items-center text-blue-600">
                                              <FaGraduationCap />
